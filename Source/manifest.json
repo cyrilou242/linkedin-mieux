@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "linkedin mieux",
+  "version": "1.0",
+  "description":
+    "Linkedin en mieux. Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.",
+  "permissions": ["*://*.linkedin.com/*", "webRequest"],
+  "icons": { "16": "logo-16.png", "128": "logo-128.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/*"],
+      "js": ["content_script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
