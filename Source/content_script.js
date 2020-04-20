@@ -211,9 +211,6 @@ function runWalker() {
 }
 
 function walk(node) {
-  // I stole this function from cloud-to-butt which stole it from here:
-  // http://is.gd/mwZp7E
-
   let child, next;
 
   if (
