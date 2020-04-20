@@ -8,14 +8,16 @@ Inspiré et forké de [they-linkedin](https://github.com/prichey/they-linkedin),
 
 ## Installation
 
-- Sur le [Chrome Store](https://chrome.google.com/webstore/detail/they-linkedin/cmjockpmecfhkaeadcgneakffkioombe). 
-- En téléchargement direct [Direct Download](https://github.com/cyrilou242/linkedin-mieux/blob/master/LinkedinMieux.crx?raw=true).
-(Dans Chrome -> Extensions. Drag and drop LinkedinMieux.crx dans la page.)
+- Sur le [Chrome Store](https://chrome.google.com/webstore/detail/linkedin-mieux/apdkgcdgjcjmkgihhglddlepeahpecad/) 
+- En téléchargement direct:
+    1. Télécharger le [package](https://github.com/cyrilou242/linkedin-mieux/blob/master/linkedin-mieux.zip?raw=true) et décompresser 
+    2. Aller dans Chrome -> [Extensions](chrome://extensions/)
+    3. Charger l'extension non empaquetée
 
 ## Permissions
 Nécessite `webRequest` pour observer les calls AJAX. Toutes les manipulations sont faites dans le DOM.
 L'extension ne fait pas de requêtes.
 
-## 🕶 〰️ 💀
+### hihi
 
 ![](screenshot.png)
