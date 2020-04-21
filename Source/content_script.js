@@ -25,7 +25,7 @@ const replacements = [
   {
     regex: /\bVoir plus\b/g,
     probability: 0.7,
-    alt: ['J\'ai beaucoup de temps à perdre', 'Je veux tout savoir', 'Je papillonne']
+    alt: ['Je veux tout savoir', 'Je papillonne']
   },
   {
     regex: /\bTéléchargez l’application LinkedIn\b/g,
