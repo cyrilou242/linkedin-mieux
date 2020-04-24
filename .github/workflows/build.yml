@@ -40,14 +40,14 @@ jobs:
 
     - run: zip -r build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip /src
     - name: create chrome
-        id: create_chrome
-        uses: trmcnvn/chrome-addon@v2
-        with:
-          extension: ${{ secrets.CHROME_EXTENSION_ID }}
-          zip: build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip
-          client-id: ${{ secrets.CHROME_CLIENT_ID }}
-          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
+      id: create_chrome
+      uses: trmcnvn/chrome-addon@v2
+      with:
+        extension: ${{ secrets.CHROME_EXTENSION_ID }}
+        zip: build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip
+        client-id: ${{ secrets.CHROME_CLIENT_ID }}
+        client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
+        refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
 
     - name: upload ff signed extension
       id: upload-ff-release-asset
@@ -61,12 +61,12 @@ jobs:
         asset_content_type: application/x-xpinstall
 
     - name: upload chrome signed extension
-        id: upload-chrome-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: "build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip"
-          asset_name: "linkedin_mieux-${{ steps.get_version.outputs.VERSION }}.zip"
-          asset_content_type: application/zip
+      id: upload-chrome-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+        asset_path: "build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip"
+        asset_name: "linkedin_mieux-${{ steps.get_version.outputs.VERSION }}.zip"
+        asset_content_type: application/zip
