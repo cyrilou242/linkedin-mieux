@@ -1,6 +1,6 @@
 {
   "name": "linkedin-mieux",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Linkedin en mieux. Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.",
   "scripts": {
     "sign": "web-ext sign -s src -a build --api-key=$WEB_EXT_API_KEY --api-secret=$WEB_EXT_API_SECRET"
