@@ -16,5 +16,10 @@
   "background": {
     "scripts": ["background.js"],
     "persistent": true
+  },
+  "applications": {
+    "gecko": {
+      "id": "linkedin-mieux@cyrilou242.github.io"
+    }
   }
 }

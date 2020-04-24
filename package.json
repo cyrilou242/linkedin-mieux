@@ -1,0 +1,13 @@
+{
+  "name": "linkedin-mieux",
+  "version": "0.1.0",
+  "description": "Linkedin en mieux. Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.",
+  "scripts": {
+    "build": "web-ext "
+  },
+  "author": "",
+  "dependencies": {},
+  "devDependencies": {
+    "web-ext": "^4.2.0"
+  }
+}
