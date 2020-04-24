@@ -38,7 +38,7 @@ jobs:
         draft: false
         prerelease: false
 
-    - run: zip -r build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip /src
+    - run: zip -r build/linkedin_mieux_${{ steps.get_version.outputs.VERSION }}.zip src
     - name: create chrome
       id: create_chrome
       uses: trmcnvn/chrome-addon@v2
