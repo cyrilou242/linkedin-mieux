@@ -2,8 +2,8 @@
 (Chrome and Firefox extension for the french linkedin) 
 
 Linkedin en mieux. 
-Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.
-Extension Chrome et Firefox pour un linkedin meilleur, que dis-je un futur meilleur.    
+Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.  
+Extension Chrome et Firefox pour un linkedin meilleur, que dis-je, un futur meilleur.    
 Inspiré et forké de [they-linkedin](https://github.com/prichey/they-linkedin), en mieux. 
 
 ## Installation
