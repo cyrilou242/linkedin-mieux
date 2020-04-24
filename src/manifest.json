@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "linkedin mieux",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description":
     "Linkedin en mieux. Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.",
   "permissions": ["*://*.linkedin.com/*", "webRequest"],
@@ -16,5 +16,10 @@
   "background": {
     "scripts": ["background.js"],
     "persistent": true
+  },
+  "applications": {
+    "gecko": {
+      "id": "linkedin-mieux@cyrilou242.github.io"
+    }
   }
 }

@@ -1,0 +1,49 @@
+name: Build and sign extension
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+
+    - run: npm install
+    - run: npm run sign
+      env:
+        CI: true
+        WEB_EXT_API_KEY: ${{ secrets.JWT_ISSUER }}
+        WEB_EXT_API_SECRET: ${{ secrets.JWT_SECRET }}
+
+    - name: get version
+      id: get_version
+      run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
+
+    - name: create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: linkedin mieux v${{ steps.get_version.outputs.VERSION }}
+        draft: false
+        prerelease: false
+
+    - name: upload signed extension
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: "./build/linkedin_mieux-${{ steps.get_version.outputs.VERSION }}-an+fx.xpi"
+        asset_name: "linkedin_mieux-${{ steps.get_version.outputs.VERSION }}-an+fx.xpi"
+        asset_content_type: application/x-xpinstall
