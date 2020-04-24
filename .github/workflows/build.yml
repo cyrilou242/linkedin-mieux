@@ -1,10 +1,9 @@
-name: Build extension
+name: Build and sign extension
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    tags:
+      - 'v*'
 
 jobs:
   build:
