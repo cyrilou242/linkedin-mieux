@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "linkedin mieux",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description":
     "Linkedin en mieux. Vocabulaire et descriptions revisitées pour toujours plus de productivité sur le réseau.",
   "permissions": ["*://*.linkedin.com/*", "webRequest"],
