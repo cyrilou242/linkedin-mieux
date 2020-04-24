@@ -15,6 +15,13 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
-    - run: npm run build
+    - run: npm install
+    - run: npm run sign
       env:
         CI: true
+        WEB_EXT_API_KEY: ${{ secrets.JWT_ISSUER }}
+        WEB_EXT_API_SECRET: ${{ secrets.JWT_SECRET }}
+    - uses: actions/upload-artifact@v1
+      with:
+        name: linkedin-mieux
+        path: build/
